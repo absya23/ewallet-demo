@@ -1,12 +1,22 @@
 import React from "react";
 import { Outlet, NavLink } from "react-router-dom";
+import Voice from "./Voice";
 
 const Layout = () => {
 	return (
 		<>
-			<Outlet />
+			<div
+				style={{
+					width: "100%",
+					height: "calc(100% - 60px)",
+					position: "absolute",
+				}}
+			>
+				<Outlet />
+				<Voice></Voice>
+			</div>
 
-			<nav class="bottom-navigation">
+			<nav className="bottom-navigation">
 				<ul>
 					<li>
 						<NavLink
@@ -15,7 +25,7 @@ const Layout = () => {
 								isPending ? "pending" : isActive ? "active" : ""
 							}
 						>
-							<i class="bx bx-home-alt"></i>
+							<i className="bx bx-home-alt"></i>
 							<p>Trang chủ</p>
 						</NavLink>
 					</li>
@@ -26,13 +36,13 @@ const Layout = () => {
 								isPending ? "pending" : isActive ? "active" : ""
 							}
 						>
-							<i class="bx bx-wallet"></i>
+							<i className="bx bx-wallet"></i>
 							<p>Ví</p>
 						</NavLink>
 					</li>
 					<li>
 						<NavLink
-							to="/wallet"
+							to="/transfer"
 							className={({ isActive, isPending }) =>
 								isPending
 									? "pending center"
@@ -41,7 +51,7 @@ const Layout = () => {
 									: "center"
 							}
 						>
-							<i class="bx bxs-plus-circle"></i>
+							<i className="bx bxs-plus-circle"></i>
 							<p>Chuyển tiền</p>
 						</NavLink>
 					</li>
@@ -52,7 +62,7 @@ const Layout = () => {
 								isPending ? "pending" : isActive ? "active" : ""
 							}
 						>
-							<i class="bx bx-history"></i>
+							<i className="bx bx-history"></i>
 							<p>Lịch sử</p>
 						</NavLink>
 					</li>
@@ -63,7 +73,7 @@ const Layout = () => {
 								isPending ? "pending" : isActive ? "active" : ""
 							}
 						>
-							<i class="bx bxs-cog"></i>
+							<i className="bx bxs-cog"></i>
 							<p>Cài đặt</p>
 						</NavLink>
 					</li>

@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { BrowserRouter, Routes, Route, redirect } from "react-router-dom";
-import { Home, Login, NoPage, Register, Setting } from "./screen";
+import { Home, Login, NoPage, Register, Setting, TransferHome } from "./screen";
 import Layout from "./components/Layout";
 import { useEffect } from "react";
 
@@ -21,6 +21,7 @@ function App() {
 						<Route path="login" element={<Login />} />
 						<Route path="register" element={<Register />} />
 						<Route path="setting" element={<Setting />} />
+						<Route path="transfer" element={<TransferHome />} />
 						<Route path="*" element={<NoPage />} />
 					</Route>
 				) : (
