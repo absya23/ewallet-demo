@@ -11,6 +11,8 @@ import opacity from "../assets/images/opacity.png";
 import avatar from "../assets/images/avatar.png";
 import background_1 from "../assets/images/background_1.png";
 import column from "../assets/images/column.png";
+import OTP from "../assets/images/OTP.png";
+import success from "../assets/images/success.png";
 
 export default {
 	logo,
@@ -26,4 +28,6 @@ export default {
 	avatar,
 	background_1,
 	column,
+	OTP,
+	success,
 };
