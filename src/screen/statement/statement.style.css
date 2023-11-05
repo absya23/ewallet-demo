@@ -1,0 +1,17 @@
+.item-statement {
+    padding: 14px 10px;
+    border-bottom: 1px dashed rgba(112, 112, 112, 0.21);
+}
+
+.item-statement img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+
+.item-statement h6 {
+    line-height: 1.5;
+    text-wrap: wrap;
+}

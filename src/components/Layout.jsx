@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet, NavLink } from "react-router-dom";
 import Voice from "./Voice";
+import { ChatBot } from "../screen";
 
 const Layout = () => {
 	return (
@@ -14,6 +15,7 @@ const Layout = () => {
 			>
 				<Outlet />
 				<Voice></Voice>
+				<ChatBot></ChatBot>
 			</div>
 
 			<nav className="bottom-navigation">
@@ -57,7 +59,7 @@ const Layout = () => {
 					</li>
 					<li>
 						<NavLink
-							to="/contact"
+							to="/statement"
 							className={({ isActive, isPending }) =>
 								isPending ? "pending" : isActive ? "active" : ""
 							}
