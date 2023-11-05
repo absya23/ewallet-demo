@@ -19,7 +19,7 @@ const Home = () => {
 						</div>
 						<div className="list-action">
 							<div className="item">
-								<Link>
+								<Link to="transfer">
 									<i className="bx bx-dollar-circle"></i>
 									<p>Chuyển tiền</p>
 								</Link>
@@ -31,7 +31,7 @@ const Home = () => {
 								</Link>
 							</div>
 							<div className="item">
-								<Link>
+								<Link to="bank">
 									<i className="bx bx-wallet"></i>
 									<p>Nạp/Rút</p>
 								</Link>
