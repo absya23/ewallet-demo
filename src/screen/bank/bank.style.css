@@ -1,0 +1,121 @@
+.bank-page .account-balance {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+    color: #Fff
+}
+
+.bank-page .account-balance p {
+    color: #87F0FF;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.bank-page .account-balance p.money {
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.bank-page .group-action {
+    padding: 10px 20px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-40px);
+    background-color: #FFF;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bank-page .group-action .action-item {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    border-bottom: 1px solid rgba(112, 112, 112, 0.21);
+}
+
+.bank-page .group-action .action-item:last-child {
+    border-bottom: 0;
+}
+
+.bank-page .group-action .action-item img {
+    width: 60px;
+    object-fit: contain;
+}
+
+.bank-page .group-action .action-item .title .heading {
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.bank-page .note {
+    color: rgb(78, 78, 78);
+}
+
+.bank-page .note a {
+    color: var(--theme-color);
+}
+
+/*  */
+.bank-page .options {
+    box-shadow: none;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.bank-page .input {
+    padding: 10px;
+}
+
+.group-action .account-balance {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.group-action .account-balance .logo {
+    height: 25px;
+    object-fit: contain;
+}
+
+.group-action .account-balance p {
+    color: #252525;
+
+}
+
+.group-action .account-balance p.money {
+    color: #252525;
+}
+
+.box-data {
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+
+}
+
+.box-data .top {
+    border-bottom: 1px dashed rgba(112, 112, 112, 0.21);
+    margin-bottom: 20px;
+}
+
+.box-data img {
+    width: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}

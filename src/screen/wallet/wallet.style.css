@@ -1,0 +1,69 @@
+.wallet-page .account-balance {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    color: #Fff
+}
+
+.wallet-page .account-balance p {
+    color: #87F0FF;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.wallet-page .account-balance p.money {
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.check-statement {
+    color: #fff;
+    margin: 0 auto;
+    display: block;
+    width: 80%;
+    border-radius: 40px;
+    background: linear-gradient(98deg, #4960F9 2.24%, #1433FF 103.02%);
+    box-shadow: 0px 8px 16px 0px rgba(27, 57, 255, 0.20);
+    overflow: hidden;
+    position: relative;
+}
+
+.check-statement a {
+    color: #FFF;
+    padding: 40px 0px 40px 30px;
+    max-width: 50%;
+    text-wrap: wrap;
+    display: inline-block;
+    font-size: 18px;
+}
+
+.check-statement::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    right: -100px;
+    top: -100px;
+    background: linear-gradient(216deg, #C72FF8 6.98%, rgba(199, 47, 248, 0.00) 136.8%);
+}
+
+.check-statement::before {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    right: -100px;
+    bottom: -100px;
+    background: linear-gradient(143deg, #5264F9 16.83%, #3AF9EF 111.57%);
+}

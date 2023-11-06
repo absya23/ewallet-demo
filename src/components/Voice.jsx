@@ -67,7 +67,7 @@ const Voice = () => {
 		return <span>Browser doesn't support speech recognition.</span>;
 	  }
 	return (
-		<button className={`voice-bot ${listening ? "active" : ""}`} onClick={listening ? SpeechRecognition.stopListening : SpeechRecognition.startListening}>
+		<button className="voice-bot">
 			<i className="bx bxs-microphone"></i>
 		</button>
 	);

@@ -13,6 +13,19 @@ import background_1 from "../assets/images/background_1.png";
 import column from "../assets/images/column.png";
 import OTP from "../assets/images/OTP.png";
 import success from "../assets/images/success.png";
+import wallet_plus from "../assets/images/wallet_plus.png";
+import wallet_minus from "../assets/images/wallet_minus.png";
+import acb from "../assets/images/acb.webp";
+import tpbank from "../assets/images/tpbank.webp";
+import vcb from "../assets/images/vcb.png";
+
+import nap from "../assets/images/nap.png";
+import rut from "../assets/images/rut.png";
+
+import naptien from "../assets/images/naptien.png";
+import ruttien from "../assets/images/ruttien.png";
+import chuyentien from "../assets/images/chuyentien.png";
+import nhantien from "../assets/images/nhantien.png";
 
 export default {
 	logo,
@@ -30,4 +43,15 @@ export default {
 	column,
 	OTP,
 	success,
+	wallet_plus,
+	wallet_minus,
+	acb,
+	tpbank,
+	vcb,
+	nap,
+	rut,
+	naptien,
+	ruttien,
+	chuyentien,
+	nhantien,
 };
