@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'react-toastify/dist/ReactToastify.css';
 import "./App.css";
 import { BrowserRouter, Routes, Route, redirect } from "react-router-dom";
 import {
@@ -12,6 +13,7 @@ import {
 	TransferOtp,
 	TransferResult,
 } from "./screen";
+import { ToastContainer } from 'react-toastify';
 import Layout from "./components/Layout";
 import { useEffect } from "react";
 
@@ -23,6 +25,7 @@ function App() {
 		}
 	}, [user]);
 	return (
+		<>
 		<BrowserRouter>
 			<Routes>
 				{user ? (
@@ -51,6 +54,8 @@ function App() {
 				)}
 			</Routes>
 		</BrowserRouter>
+		<ToastContainer />
+		</>
 	);
 }
 
