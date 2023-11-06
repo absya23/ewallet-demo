@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 import { Top } from "../components";
 
 const Home = () => {
-	let name = "Linh";
-	let account_balance = 123456;
+	const user = JSON.parse(window.localStorage.getItem("user") || {})
+	const name = user?.name || "";
+	const account_balance = user?.balance || 0;
+
 	return (
 		<div className="page-container home-page">
 			<Top name={name}></Top>
