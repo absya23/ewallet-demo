@@ -1,16 +1,54 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BankList, ButtonBottom, MoneySuggest, Top2 } from "../../components";
 import { useNavigate } from "react-router-dom";
 import formatNumber from "../../handler";
 import { images } from "../../constants";
 import { Form } from "react-bootstrap";
 import "./bank.style.css";
+import { playVoiceAPI } from "../../api";
+import Voice from "../../components/Voice";
+import { mapMoney } from "../../services";
 
 const Withdraw = () => {
-	const [money, setMoney] = useState(null);
-	const [bank, setBank] = useState(1);
-	const account_balance = 120000;
 	const navigate = useNavigate(null);
+	const [money, setMoney] = useState(0);
+	const [bank, setBank] = useState(1);
+	const [user, setUser] = useState({})
+	const [userId, setUserId] = useState("")
+
+	useEffect(() => {
+		const getData = async () => {
+			playVoiceAPI.withdraw();
+			const user = await JSON.parse(window.localStorage.getItem("user") || {})
+			const userId = user?.userId;
+			setUser(user)
+			setUserId(userId)
+		}
+		getData()
+	}, [])
+
+	const commands = [
+		{
+		  command: 'kiểm tra tài khoản',
+		  callback: () => playVoiceAPI.checkBalance(user.balance)
+		},
+		{
+		  command: 'kiểm tra số dư',
+		  callback: () => playVoiceAPI.checkBalance(user?.balance || 0)
+		},
+		{
+		  command: 'rút *',
+		  callback: (amount) => {
+			if (user?.balance < mapMoney(amount)) {
+				playVoiceAPI.notEnough()
+				return;
+			}
+			setMoney(mapMoney(amount))
+			setTimeout(() => document.querySelector(".btn.btn-gradient").click(), 1000)
+		  }
+		},
+	] 
+	
 	const handleClick = () => {
 		navigate(`/bank/confirm`, { state: { type: 2, data: { money, bank } } });
 	};
@@ -26,7 +64,7 @@ const Withdraw = () => {
 							<img src={images.logo} alt="" className="logo" />
 							<p className="ms-2">Số dư ví:</p>
 						</div>
-						<p className="money">{formatNumber(account_balance)}</p>
+						<p className="money">{formatNumber(user?.balance || 0)}</p>
 					</div>
 					<Form.Control
 						type="number"
@@ -43,6 +81,7 @@ const Withdraw = () => {
 				</div>
 			</div>
 			<ButtonBottom handleClick={() => handleClick()}>Tiếp tục</ButtonBottom>
+			<Voice commands={commands}/>
 		</div>
 	);
 };

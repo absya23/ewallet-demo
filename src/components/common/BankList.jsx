@@ -8,18 +8,18 @@ const bankData = [
 		name: "ACB",
 		account_number: "*****1410",
 	},
-	{
-		id: 2,
-		logo: images.vcb,
-		name: "Vietcombank",
-		account_number: "*****2314",
-	},
-	{
-		id: 3,
-		logo: images.tpbank,
-		name: "TPBank",
-		account_number: "*****5672",
-	},
+	// {
+	// 	id: 2,
+	// 	logo: images.vcb,
+	// 	name: "Vietcombank",
+	// 	account_number: "*****2314",
+	// },
+	// {
+	// 	id: 3,
+	// 	logo: images.tpbank,
+	// 	name: "TPBank",
+	// 	account_number: "*****5672",
+	// },
 ];
 
 const BankList = ({ chosen = 1, setChooseBank = () => {} }) => {

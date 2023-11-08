@@ -1,11 +1,16 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { ButtonBottom, TopShort } from "../../components";
 import { images } from "../../constants";
 import { useNavigate } from "react-router-dom";
 import "./bank.style.css";
+import { playVoiceAPI } from "../../api";
 
 const BankResult = () => {
 	const navigate = useNavigate();
+	useEffect(() => {
+		playVoiceAPI.success()
+	}, [])
+
 	return (
 		<div className="page-container">
 			<TopShort>Giao dịch</TopShort>

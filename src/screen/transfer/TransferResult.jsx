@@ -1,11 +1,14 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import { ButtonBottom, TopShort } from "../../components";
 import { images } from "../../constants";
+import { playVoiceAPI } from "../../api";
 
 const TransferResult = () => {
 	const navigate = useNavigate();
-
+	useEffect(() => {
+		playVoiceAPI.success()
+	}, [])
 	return (
 		<div className="page-container">
 			<TopShort>Kết quả</TopShort>
