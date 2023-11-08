@@ -14,8 +14,8 @@ const Layout = () => {
 				}}
 			>
 				<Outlet />
-				<Voice></Voice>
-				<ChatBot></ChatBot>
+				{/* <Voice></Voice> */}
+				{/* <ChatBot></ChatBot> */}
 			</div>
 
 			<nav className="bottom-navigation">

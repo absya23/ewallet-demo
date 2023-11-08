@@ -1,13 +1,48 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./home.style.css";
 import formatNumber from "../handler";
 import { Link } from "react-router-dom";
 import { Top } from "../components";
+import { playVoiceAPI } from "../api";
+import Voice from "../components/Voice";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+	const navigate = useNavigate()
 	const user = JSON.parse(window.localStorage.getItem("user") || {})
 	const name = user?.name || "";
 	const account_balance = user?.balance || 0;
+
+	useEffect(() => {
+		playVoiceAPI.welcome();
+	}, [])
+	
+	const commands = [
+		{
+		  command: 'kiểm tra tài khoản',
+		  callback: () => playVoiceAPI.checkBalance(user.balance)
+		},
+		{
+		  command: 'kiểm tra số dư',
+		  callback: () => playVoiceAPI.checkBalance(user?.balance || 0)
+		},
+		{
+			command: 'chuyển (tiền)',
+			callback: () => navigate("transfer")
+		},
+		{
+			command: 'nạp (tiền)',
+			callback: () => navigate("/bank/deposit")
+		},
+		{
+			command: 'rút (tiền)',
+			callback: () => navigate("/bank/withdraw")
+		},
+		{
+			command: 'lịch sử (giao dịch)',
+			callback: () => navigate("statement")
+		},
+	] 
 
 	return (
 		<div className="page-container home-page">
@@ -48,6 +83,7 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
+			<Voice commands={commands}/>
 		</div>
 	);
 };

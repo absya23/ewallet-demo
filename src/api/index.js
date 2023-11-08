@@ -12,6 +12,7 @@ const axiosClient = axios.create({
   headers: {
     "Content-Type": "application/json",
     "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljZWR1eHljb2xmenlibHpmcmZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTgxMzcwMDUsImV4cCI6MjAxMzcxMzAwNX0.TOvlPwZvKSOPrggdaCs8oH9scGnA7recFaKO2q8U-ig",
+    "Prefer": "return=representation",
   },
   paramsSerializer: (params) => queryString.stringify({ ...params }),
 });
@@ -63,9 +64,9 @@ const api = {
     },
     
     //PUT***************************
-    putSubject: (id, payload) => {
-        const url = "subject/" + String(id);
-        return axiosClient.put(url, payload);
+    updateUser: (id, payload) => {
+        const url = "Users?userId=eq." + String(id);
+        return axiosClient.patch(url, payload);
     },
 
     //DELETE*****************************
