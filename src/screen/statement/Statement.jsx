@@ -65,7 +65,7 @@ const Statement = () => {
 			const data = myTransactions.map((item) => {
 				if (item.type === "Transfer") {
 					if (item.senderId == userId) {
-						const friend = allUsers.find((item) => item.userId == item.receiverId)
+						const friend = allUsers.find((user) => user.userId == item.receiverId)
 						const name = friend?.name;
 						return {
 							id: item.transactionId,
@@ -75,7 +75,7 @@ const Statement = () => {
 						}
 					}
 					else {
-						const friend = allUsers.find((item) => item.userId == item.senderId)
+						const friend = allUsers.find((user) => user.userId == item.senderId)
 						const name = friend?.name;
 						return {
 							id: item.transactionId,

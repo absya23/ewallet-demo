@@ -42,6 +42,13 @@ const Home = () => {
 			command: 'lịch sử (giao dịch)',
 			callback: () => navigate("statement")
 		},
+		{
+			command: 'đăng xuất',
+			callback: () => {
+				window.localStorage.setItem("user", {})
+				navigate("/");
+			}
+		},
 	] 
 
 	return (
