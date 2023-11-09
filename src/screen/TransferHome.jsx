@@ -8,7 +8,7 @@ import "./transferHome.style.css";
 import Voice from "../components/Voice";
 
 const TransferHome = () => {
-	const [key, setKey] = useState("hey");
+	const [key, setKey] = useState("");
 	const [users, setUsers] = useState([])
 	const [allUsers, setAllUsers] = useState([])
 	const [searchUsers, setSearchUsers] = useState([])
@@ -64,6 +64,15 @@ const TransferHome = () => {
 			setTimeout(() => document.querySelector(".btn.btn-gradient").click(), 500)
 		  }
 		},
+		{
+			command: 'tìm *',
+			callback: (phone) => {
+				setKey(phone);
+				setTimeout(() => {
+					document.querySelector(".search button").click()
+				}, 1000)
+			}
+		  },
 		{
 			command: 'chuyển (cho) *',
 			callback: (name) => {

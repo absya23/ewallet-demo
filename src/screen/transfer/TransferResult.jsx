@@ -8,6 +8,9 @@ const TransferResult = () => {
 	const navigate = useNavigate();
 	useEffect(() => {
 		playVoiceAPI.success()
+		setTimeout(() => {
+			navigate("/");
+		}, 5000)
 	}, [])
 	return (
 		<div className="page-container">

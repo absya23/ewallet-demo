@@ -8,7 +8,10 @@ import { playVoiceAPI } from "../../api";
 const BankResult = () => {
 	const navigate = useNavigate();
 	useEffect(() => {
-		playVoiceAPI.success()
+		playVoiceAPI.success();
+		setTimeout(() => {
+			navigate("/");
+		}, 3000)
 	}, [])
 
 	return (
